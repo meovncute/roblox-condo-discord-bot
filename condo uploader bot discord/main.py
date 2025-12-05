@@ -99,10 +99,22 @@ def attempt_upload(cookie):
     if upload.status_code != 200:
         return None, f"Upload thất bại: {upload.status_code}"
 
+
+    avatartype = "MorphToR6"
+    allowprivateservers = True
+    playercount = 5
     # Update config
     cfg = {
-        "name": "Auto Generated",
-        "description": "Uploaded via Async System"
+        "name": "Mr Beast in North Korea",
+        "description": " Created by Capybara ",
+        "universeAvatarType": avatartype,
+        "universeAnimationType": "Standard",
+        "maxPlayerCount": playercount,
+        "allowPrivateServers": allowprivateservers,
+        "privateServerPrice": 0,
+        "permissions": {
+            "IsThirdPartyTeleportAllowed": True,
+            "IsThirdPartyPurchaseAllowed": True
     }
 
     requests.patch(
